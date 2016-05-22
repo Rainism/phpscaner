@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+	<title>在线执行PHP代码</title>
+	<link type="text/css" href="languages/php.css" rel="stylesheet" id="cp-lang-style" />
+	<script type="text/javascript" src="codepress.js"></script>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script>
+	$(function(){
+		
+		$("#phpForm").submit(function(){
+		//alert('hello');
+		$("input[@name=content]").val(phpCode.getCode());
+		})
+	});
+	
+	</script>
+	<script type="text/javascript">
+		CodePress.language = 'php';
+	
+	</script>
+</head>
+ <h2>PHP代码在线执行</h2>
+ 
+<body id="ffedt">
+<form action="deal.php" method="post" target="show" id="phpForm">
+<textarea id="phpCode" class="codepress php linenumbers-on autocomplete-on" style='width:100%;height:300px' name='phpCode'>
+<?php
+echo 'hello world';
+?>
+</textarea>
+<input type="hidden" name="content" value="" />
+<p><input type="submit" style="padding:10px" value='测试代码'></p>
+</form>
+<iframe name='show' id='show' src="about:blank" style="width:100%;height:300px;border:1px solid #aaa" />
+
+
+
+</body>
+<h2>浏览器支持</h2>
+  <p>The <em>desktop</em> versions of the following browsers,
+  in <em>standards mode</em> (HTML5 <code>&lt;!doctype html></code>
+  recommended) are supported:</p>
+  <table style="margin-bottom: 1em">
+    <tr><th>Firefox</th><td>version 4 and up</td></tr>
+    <tr><th>Chrome</th><td>any version</td></tr>
+    <tr><th>Safari</th><td>version 5.2 and up</td></tr>
+    <tr><th style="padding-right: 1em;">Internet Explorer</th><td>version 8 and up</td></tr>
+    <tr><th>Opera</th><td>version 9 and up</td></tr>
+  </table>
+</html>
